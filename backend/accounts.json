@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "user_name": "long ne1234",
+        "password": "ddđ",
+        "image": "https://logcue.duckdns.org/image/avatar.png",
+        "role": "admin",
+        "date": "08:22:45 27/12/2023"
+    },
+    {
+        "id": 2,
+        "user_name": "long ne1234",
+        "password": "ddđ",
+        "image": "https://logcue.duckdns.org/image/avatar.png",
+        "role": "employee",
+        "date": "08:23:13 27/12/2023"
+    },
+    {
+        "id": 3,
+        "user_name": "long ne",
+        "password": "d",
+        "image": "https://logcue.duckdns.org/image/avatar.png",
+        "role": "employee",
+        "date": "08:24:07 27/12/2023"
+    }
+]
