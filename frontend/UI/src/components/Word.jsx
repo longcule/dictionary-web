@@ -32,47 +32,49 @@ const Word = () => {
 
   useEffect(() => {
     const result = words.filter((word) => {
-      return word.name.toLowerCase().match(search.toLowerCase());
+      return word.word.toLowerCase().match(search.toLowerCase());
     });
     setFilteredWord(result);
   }, [search]);
 
   const column = [
     { name: "STT", selector: (row, index) => index + 1, sortable: true, grow: 0 },
-    { name: "Date", selector:(row) =>{
-        const currentDate = new Date();
-        const day = String(currentDate.getDate()).padStart(2, '0');
-        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-        const year = currentDate.getFullYear();
-        return `${day}/${month}/${year}`; 
-      },  sortable: true
-    },
-    { name: "Word", selector: (row) => row.name, sortable: true, },
-    { name: "Meaning", selector: (row) => row.capital, sortable: true },
-    { name: "Description", selector: (row) => row.region, sortable: true },
-    { name: "User Edit status", selector: (row) => row.population, sortable: true },
+    // { name: "Date", selector:(row) =>{
+    //     const currentDate = new Date();
+    //     const day = String(currentDate.getDate()).padStart(2, '0');
+    //     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    //     const year = currentDate.getFullYear();
+    //     return `${day}/${month}/${year}`; 
+    //   },  sortable: true
+    // },
+    { name: "Date", selector: (row) => row.date, sortable: true, },
+    { name: "Date2", selector: (row) => row.date, sortable: true, },
+    { name: "Word", selector: (row) => row.word, sortable: true, },
+    { name: "Meaning", selector: (row) => row.meaning, sortable: true },
+    { name: "Description", selector: (row) => row.note, sortable: true },
+    { name: "User Edit status", selector: (row) => row.user_add, sortable: true },
     {
       name: "Image",
-      selector: (row) => <img src={row.flag} width={25} height={25} />,
+      selector: (row) => <img src={row.image[0]} width={25} height={25} />,
     },
-    {
-      name: "Edit",
-      cell: (row) => (
-        <button
-          className="btn btn-success"
-          onClick={() => {
-            alert(row.name);
-          }}
-        >
-          Edit
-        </button>
-      ),
-    },
-    {
-      name: "Delete",
-      cell: (row) => <button className="btn btn-warning">Delete</button>,
-    },
-    {name: "Subject", selector:(row) => "English", sortable: true}
+    // {
+    //   name: "Edit",
+    //   cell: (row) => (
+    //     <button
+    //       className="btn btn-success"
+    //       onClick={() => {
+    //         alert(row.name);
+    //       }}
+    //     >
+    //       Edit
+    //     </button>
+    //   ),
+    // },
+    // {
+    //   name: "Delete",
+    //   cell: (row) => <button className="btn btn-warning">Delete</button>,
+    // },
+    {name: "Subject", selector:(row) => row.subject, sortable: true}
   ];
 
   return (

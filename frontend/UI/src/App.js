@@ -12,8 +12,8 @@ function App() {
     <Router>
       <Routes>
         {/* Các routes khác */}
-        <Route path='/WebSite' element = {<Word />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path='/' element = {<Word />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} >
           {/* <Route path="manage-accounts" element={<ManageAccounts />} />
           <Route path="manage-users" element={<ManageUsers />} /> */}
